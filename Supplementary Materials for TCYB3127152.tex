@@ -1,0 +1,204 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{mathtools} 
+\newtheorem{theorem}{\bf Theorem}[section]
+\newtheorem{remark}{\bf Remark}[section]
+\newtheorem{example}{\bf Example}[section]
+\newtheorem{proof}{\bf Proof}
+%\newtheorem{definition}{\bf Definition}[section]
+%\newtheorem{proposition}{\bf Proposition}[section]
+\usepackage{cite}
+\usepackage{enumerate}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{setspace}
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}} %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{Output:}} %UseOutput in the format of Algorithm
+\usepackage[section]{placeins}
+\allowdisplaybreaks[4]
+%\usepackage{float}	
+
+
+	
+\begin{document}
+	
+
+\clearpage
+\setcounter{equation}{0}
+\setcounter{page}{1}
+
+
+
+{\color{black}\section* {Supplementary Materials}
+The detailed proofs of Theorem 3.1 and Theorem 3.3 are presented in this section.
+\subsection{Proof of Theorem 3.1}
+We suppose that  $ x\in [-1,1]$ is a fixed point and  $m, n$ are large enough natural numbers.
+We have $D_{x-}^{\nu}f(x)=D_{*x}^{\nu}f(x)=0.$
+
+With the help of definition (13), we get  the difference between $\mathcal{F}_{m,n}^{{\color{black}1}}(x)$ and $f(x) $ in the form 
+\begin{align}\label{B}
+&\Big|\mathcal{F}_{m,n}^{{\color{black}1}}(x)-f(x)\Big|=\Big|\sum\limits_{i=-m-n}^{m+n}f
+\Big(\frac{i}{n}\Big)\Psi(nx-i)-f(x)\Big|\notag\\
+=&\Big|\sum\limits_{i=-m-n}^{m+n}f\Big(\frac{i}{n}\Big)\Psi(nx-i)-
+\sum\limits_{i=-\infty}^{\infty}\Psi(nx-i)f(x)\Big|\notag\\
+\leq&\Big|\sum\limits_{i=-m-n}^{m+n}\Big(f\Big(\frac{i}{n}\Big)-f(x)\Big)\Psi(nx-i)\Big|\tag{S1}\\
++&\Big|\sum\limits_{|i|\geq 1+m+n}f(x)\Psi(nx-i)\Big|\notag\\
+:=&B_{1}+B_{2},\notag
+\end{align}
+where $B_{1}=\Big|\sum\limits_{i=-m-n}^{m+n}\Big(f\Big(\frac{i}{n}\Big)-f(x)\Big)\Psi(nx-i)\Big|$
+and
+$B_{2}=\Big|\sum\limits_{|i|\geq 1+m+n}f(x)\Psi(nx-i)\Big|$.
+
+Similar to (25), we can derive the following estimation by repeatedly employing the fractional Taylor formula
+\begin{align}
+    &\sum\limits_{i=-m-n}^{m+n}(f(\frac{i}{n})-f(x))\Psi(nx-i)
+   \notag\\
+    &=\sum\limits_{k=1}^{K-1}\frac{f^{k}(x)}{k!}\sum\limits_{i=-m-n}^{m+n}\Psi(nx-i)(\frac{i}{n}-x)^{k}\notag\\
+    &+\!\!\!\!\sum\limits_{i=-m-n}^{\lfloor nx\rfloor}\!\frac{1}{\!\!\!\!\Gamma(\nu)}\Psi(nx\!-\!k)\!\!\int^{x}_{\frac{i}{n}}\!\!\!\!\!(\eta\!-\!\frac{i}{n})^{\nu\!-\!1}
+    (D_{x-}^{\nu}f(\eta)\!-\!\!D_{x-}^{\nu}f(x))d\eta\notag\\
+    &+\!\!\!\!\sum\limits_{i=\lfloor nx\rfloor +1}^{m+n}\!\frac{1}{\!\!\!\!\Gamma(\nu)}\Psi(nx\!-\!i)
+   \!\!\int_{x}^{\!\frac{i}{n}}\!\!\!(\frac{i}{n}\!-\xi)^{\nu\!\!-\!\!1}
+   (D_{*x}^{\nu}f(\xi)\!-\!\!D_{*x}^{\nu}f(x))d\xi\notag\\
+   &:=\theta_{1}+\theta_{2}+\theta_{3}\tag{S2}. 
+\end{align} 
+
+The above result shows that the first part of $\big|\mathcal{F}_{m,n}^{{\color{black}1}}(x)-f(x)\big|$, $B_{1}$, can 
+be estimated by three parts $\theta_{1}, \theta_{2}$ and $\theta_{3}.$
+
+Let us consider the estimation of the first term $\theta_{1}$ of $B_{1}$. We note that it can be deduced in a manner similar to the derivation process of $\Lambda_1$.
+
+For the case of $\big|\frac{i}{n}-x\big|<{n^{-\delta}},$ we have that 
+\begin{align}\label{delta11}
+\theta_{11}\!\!&:=\sum\limits_{\big|\frac{i}{n}-x\big|<{n^{-\delta}}}\Psi(nx-i)\Big|\frac{i}{n}-x\Big|^{k}\notag\\
+&\leq\frac{1}{n^{\delta k}}
+\sum\limits_{i=-\infty}^{\infty}\Psi(nx-i)\tag{S3}\\
+&=\frac{1}{n^{\delta k}}.\notag
+\end{align}
+
+
+While for $\big|\frac{i}{n}-x\big|\geq{n^{-\delta}}$, we deduce that 
+\begin{equation}\label{delta12}
+\begin{array}{ll}
+\theta_{12}\!\!\!\!&:=\sum\limits_{|\frac{i}{n}-x|\geq {n^{-\delta}}}\Psi(nx-i)\\
+&=\sum\limits_{|{i}-nx|\geq {{n^{1-\delta}}}}\Psi(nx-i)\\
+&\leq 2\int_{-1+n^{1-\delta}}^{\infty}\frac{(e^{2-\tau}-e^{-\tau})}{2e(1+e^{-\tau-1})(1+e^{-\tau+1})}d\tau\\
+&{\color{black}<}\frac{e^{2}-1}{e}\int_{-1+n^{1-\delta}}^{\infty}e^{-\tau}d\tau\tag{S4} \\ &=\frac{e^{2}-1}{e}e^{-(n^{1-\delta}-1)}\\
+&=(e^{2}-1)e^{-n^{1-\delta}}.\\
+\end{array}
+\end{equation}
+
+
+	
+Moreover, by using the properties of function $\Psi$ in Section II, 
+as well as \eqref{delta11} and \eqref{delta12}, one has 
+\begin{equation}\label{delta1}
+\begin{array}{ll}
+|\theta_{1}|\!\!\!\!
+&=\Big|\sum\limits_{k=1}^{K-1}\frac{f^{(k)}(x)}{k!}\sum\limits_{\mathclap{i=-m-n}}^{m+n}\Psi(nx-i)
+(\frac{i}{n}-x)^{k}\Big|\\
+&\leq\sum\limits_{k=1}^{K-1}\frac{\|f\|_{(K)}}{k!}
+\theta_{11}+\sum\limits_{k=1}^{K-1}\frac{\|f\|_{(K)}}{k!}
+|\frac{i}{n}-x|^{k}\theta_{12}\tag{S5}\\
+&\leq \sum\limits_{k=1}^{K-1}\frac{\|f\|_{(K)}}{k!}[{n^{-\delta k}}
++\!3^{k}\cdot {(e^{2}-1)}\cdot e^{-n^{(1-\delta)}}]\!.\\
+\end{array}
+\end{equation}
+
+Similar to the expressions of (40) and  (44), we can obtain the estimation of $\theta_{2}$ and $\theta_{3}$, respectively.
+\begin{align}\label{dealta2}
+|\theta_{2}|\!\!=&\Big|\sum\limits_{i=-m-n}^{\lfloor nx  \rfloor}\frac{1}{\Gamma(\nu)}\Psi(nx-i)\times\notag\\
+&\int^{x}_{\frac{i}{n}}(\eta-\frac{i}{n})^{\nu-1}
+(D_{x-}^{\nu}f(\eta)-D_{x-}^{\nu}f(x))d\eta\Big|\notag\\
+ \leq& \frac{\|f\|_{(K)}}{\Gamma(K\!-\!\nu\!+\!1)\Gamma(\nu\!+\!1)}
+(x\!+\!\frac{m}{n}\!+\!1)^{{\color{black}K}}{(e^{2}\!-\!1)}\cdot e^{-n^{(1\!-\!\delta)}}\notag\\
++ &\frac{1}{\Gamma(\nu+1)}w(D_{x-}^{\nu}f,\frac{1}{n^{\delta}})_{[-1,x]}
+\frac{1}{n^{\nu\delta}}.\tag{S6}
+\end{align}
+
+In addition, we have that
+\begin{align}\label{delta3}
+&|\theta_{3}|\!\!=\Big|\sum\limits_{i=\lfloor nx\rfloor +1}^{m+n}\frac{1}{\Gamma(\nu)}\Psi(nx-i) \times\notag\\
+&\int_{x}^{\frac{i}{n}}(\frac{i}{n}-\xi)^{\nu-1}
+(D_{*x}^{\nu}f(\xi)-D_{*x}^{\nu}f(x))d\xi\Big|\notag\\
+&\leq  \frac{\|f\|_{(K)}(-x+1+\frac{m}{n})^{K}}{\Gamma(K\!-\!\nu\!+\!1)\Gamma(\nu\!+\!1)}
+{(e^{2}-1)}\cdot e^{-n^{(1-\delta)}}\tag{S7}\\
+&+\frac{1}{\Gamma(\nu+1)n^{\nu\delta}}w(D_{*x}^{\nu}f,\frac{1}{n^{\delta}})_{[x,1]}.\notag
+\end{align}
+
+The above results, \eqref{delta1}-\eqref{delta3}, directly yield  the result of $B_{1}$ 
+as follows.
+\begin{align}\label{b1}
+B_{1}\!\!
+&=\Big|\sum\limits_{i=-m-n}^{m+n}(f(\frac{i}{n})-f(x))\Psi(nx-i)\Big|\notag\\
+&\leq |\theta_{1}|+|\theta_{2}|+|\theta_{3}|\notag\\
+\leq& \sum\limits_{k=1}^{K-1}\frac{\|f\|_{(K)}}{k!}[\frac{1}{n^{\delta k}}
++3^{k}\cdot(e^{2}-1)\cdot e^{-n^{(1-\delta)}}]\notag\\
+&+\frac{1}{\Gamma(\nu\!+\!1)n^{\nu\delta}}
+{\color{black}\Big\{\!w(D_{x-}^{\nu}f,\frac{1}{n^{\delta}})_{\![-1,x]\!}}
++w(D_{*x}^{\nu}f,\frac{1}{n^{\delta}})_{[\!x,1\!]}\!\Big\}\notag\\
+&+\frac{\|f\|_{(K)}}{\Gamma(K-\nu+1)\Gamma(\nu+1)}{(e^{2}-1)}\cdot e^{-n^{(1-\delta)}}\times\notag\\
+&~~~~\Big\{(x+1+\frac{m}{n})^{K}+(-x+1+\frac{m}{n})^{K}\Big\}.\tag{S8}
+\end{align}
+
+Now, we consider the estimation of $B_{2}$ in \eqref{B}.
+
+For any fixed $x\in[-1,1]$, the assumption $|i|\geq1+ m+n$ implies that  
+\begin{equation}
+    |nx-i|\geq |i|-|nx|\geq 1+m+n-n=1+m.\tag{S9}
+\end{equation}
+
+
+Thus, we obtain that
+\begin{align}\label{sum_i_large_2}
+&\sum\limits_{|i|\geq 1+m+n}\Psi(nx-i)\notag\\
+    &\leq \sum\limits_{|nx-i|\geq 1+m}\Psi(|nx-i|)\leq 2\int_{m}^{\infty}\Psi(\tau)d\tau\notag\\
+    &=2\int_{m}^{\infty}\frac{(e^{2}-1)e^{-t}}{2e(1+e^{-t-1})(1+e^{-t+1})}dt\notag\\
+    &{\color{black}<}  \frac{e^{2}-1}{e}\int_{m}^{\infty}e^{-t}dt\tag{S10}\\
+    &=\frac{e^{2}-1}{e}e^{-m}=e^{1-m}-e^{-1-m}.\notag
+\end{align}
+ 
+Combing with the fact that $f$ is bounded on $[-1,1]$, we get
+\begin{equation}\label{b2}
+B_{2}\leq \|f\|_{\infty}(e^{1-m}-e^{-1-m}).\tag{S11}
+\end{equation}
+
+In summary, by using  \eqref{b1} and \eqref{b2}, we finally establish the convergence of $\mathcal{F}_{m,n}^{{\color{black}1}}$ to $f$, i.e., the point-wise approximation ability of  $\mathcal{F}_{m,n}^{{\color{black}1}}$.
+\begin{align*}
+&\big|\mathcal{F}_{m,n}^{{\color{black}1}}(x)-f(x)\big|\\
+\leq&\sum\limits_{k=1}^{K-1}\frac{\|f\|_{(K)}}{k!}\big[{n^{-\delta k}}
++3^{k}\cdot(e^{2}-1)\cdot e^{-n^{(1-\delta)}}\big]\\
++&\frac{\|f\|_{(K)}}{\Gamma(K-\nu+1)\Gamma(\nu\!+\!1)}{(e^{2}-1)}\cdot e^{-n^{(1-\delta)}}\times\\
+&~~\Big\{
+(x+1+\frac{m}{n})^{K}+(-x+1+\frac{m}{n})^{K}\Big\}\\
++&\frac{1}{\Gamma(\nu+1)n^{\nu\delta}}
+%\Big\{w(D_{x-}^{\nu}f,\frac{1}{n^{\delta}})_{[-1,x]}+
+w(D_{*x}^{\nu}f,\frac{1}{n^{\delta}})_{[x,1]}\Big\}
+\\
++&\|f\|_{\infty}(e^{1-m}-e^{-1-m})\tag{S12}.
+\end{align*} 
+
+This then completes the proof of point-wise approximation for $\mathcal{F}_{m,n}^{{\color{black}1}}(x)$ to $f(x)$.
+$\hfill\blacksquare$ 
+
+\subsection{{\color{black}Proof of Theorem 3.3}}
+
+Now, we {\color{black} consider} the uniform approximation of $\mathcal{F}_{m,n}^{{\color{black}1}}$ to $f$.
+
+It is easy to {\color{black} recognize} that the first and fourth terms of (15) are uniformly bounded. To guarantee the uniform approximation result, (17), one only needs to evaluate the remaining two terms. We note that (15) has the same four  functions,
+ $w(D_{x-}^{\nu}f,\frac{1}{n^{\delta}})_{[-1,x]},~w(D_{*x}^{\nu}f,\frac{1}{n^{\delta}})_{[x,1]},~
+(x+1+\frac{m}{n})^{K}$ and $(-x+1+\frac{m}{n})^{K}$ compared with (16). These four functions are all uniformly bounded on $x\in[-1,1]$ because they are identical {\color{black} with  (51), (52), (54)  and (55), respectively}. Following steps similar to that of Theorem {\color{black}3.4}, we can obtain the uniform approximation result, (17). This then  {\color{black} proves} Theorem  {\color{black}3.3}.  
+$\hfill\blacksquare$ 
+}
+
+
+
+
+
+
+
+\end{document}
